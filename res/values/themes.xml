@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2016 The Android Open Source Project
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- True-black, iOS-Clock-like theme. Android 15+ enforces edge-to-edge, so bars are transparent
+         and the content layouts (fitsSystemWindows) handle the insets. -->
+    <style name="Theme.DeskClock" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:colorBackgroundFloating">?attr/colorBackgroundFloating</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:enforceNavigationBarContrast">false</item>
+        <item name="android:enforceStatusBarContrast">false</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:popupTheme">?attr/popupTheme</item>
+        <item name="android:timePickerStyle">@style/Widget.TimePicker</item>
+        <item name="android:windowBackground">@color/ios_black</item>
+        <item name="android:windowContentOverlay">@null</item>
+
+        <!-- Attributes from androidx.appcompat.appcompat -->
+        <item name="colorAccent">@color/ios_orange</item>
+        <item name="colorBackgroundFloating">@color/ios_card</item>
+        <item name="colorControlActivated">@color/ios_orange</item>
+        <item name="colorControlNormal">?android:attr/textColorPrimary</item>
+        <item name="colorPrimaryDark">@color/ios_black</item>
+        <item name="imageButtonStyle">@style/Widget.ImageButton</item>
+        <item name="popupTheme">@style/ThemeOverlay.Popup</item>
+    </style>
+
+    <style name="Theme.DeskClock.Settings">
+        <!-- Attributes from androidx.appcompat.appcompat -->
+        <item name="actionBarStyle">@style/Widget.ActionBar</item>
+        <item name="colorControlActivated">?attr/colorAccent</item>
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">false</item>
+
+        <!-- Attributes from androidx.preference.-->
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
+    </style>
+
+    <style name="Theme.DeskClock.RingtonePicker">
+        <!-- Attributes from androidx.appcompat.appcompat -->
+        <item name="actionBarStyle">@style/Widget.ActionBar</item>
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">false</item>
+    </style>
+
+    <style name="Theme.DeskClock.CitySelection">
+        <!-- Attributes from androidx.appcompat.appcompat -->
+        <item name="actionBarStyle">@style/Widget.ActionBar.NoTitle</item>
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">false</item>
+    </style>
+
+    <style name="ThemeOverlay.Control.Accent" parent="ThemeOverlay.AppCompat">
+        <!-- Attributes from androidx.appcompat.appcompat -->
+        <item name="colorControlActivated">?attr/colorAccent</item>
+    </style>
+
+    <style name="ThemeOverlay.Popup" parent="ThemeOverlay.AppCompat">
+        <item name="android:colorBackground">?attr/colorBackgroundFloating</item>
+    </style>
+
+</resources>

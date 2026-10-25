@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/ios_world_clock_widget_desc"
+    android:initialLayout="@layout/loading_widget"
+    android:minHeight="@dimen/min_digital_widget_height"
+    android:minResizeHeight="59dp"
+    android:minResizeWidth="136dp"
+    android:minWidth="@dimen/min_digital_widget_width"
+    android:previewImage="@drawable/appwidget_digital_clock_preview"
+    android:resizeMode="horizontal|vertical"
+    android:targetCellHeight="2"
+    android:targetCellWidth="4"
+    android:updatePeriodMillis="0"
+    android:widgetCategory="keyguard|home_screen" />

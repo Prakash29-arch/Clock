@@ -1,0 +1,45 @@
+android_app {
+    name: "DeskClock",
+    resource_dirs: ["res"],
+    sdk_version: "current",
+    // Android 17 (API 37): target it explicitly so the app gets the real behaviour of that release
+    // (edge-to-edge, predictive back, FGS types, background-audio hardening) instead of a legacy shim.
+    min_sdk_version: "31",
+    target_sdk_version: "37",
+    overrides: ["AlarmClock"],
+    srcs: [
+        "src/**/*.java",
+        "gen/**/*.java",
+    ],
+    product_specific: true,
+    static_libs: [
+        "androidx.activity_activity",
+        "androidx.annotation_annotation",
+        "androidx.collection_collection",
+        "androidx.arch.core_core-common",
+        "androidx.lifecycle_lifecycle-common",
+        "com.google.android.material_material",
+        "androidx.lifecycle_lifecycle-runtime",
+        "androidx.percentlayout_percentlayout",
+        "androidx.transition_transition",
+        "androidx.core_core",
+        "androidx.legacy_legacy-support-core-ui",
+        "androidx.media_media",
+        "androidx.legacy_legacy-support-v13",
+        "androidx.preference_preference",
+        "androidx.appcompat_appcompat",
+        "androidx.gridlayout_gridlayout",
+        "androidx.recyclerview_recyclerview",
+    ],
+    required: [
+        "whitelist_com.android.deskclock"
+    ],
+}
+
+prebuilt_etc {
+    name: "whitelist_com.android.deskclock",
+    product_specific: true,
+    sub_dir: "sysconfig",
+    src: "whitelist_com.android.deskclock.xml",
+    filename_from_src: true,
+}
